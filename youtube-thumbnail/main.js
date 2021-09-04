@@ -15,14 +15,14 @@ function insertThumbnail() {
     tmb.height = 94
     tmb.style.paddingTop = "8px"
 
-    const title = document.getElementsByTagName("h1")[0]
+    const title = document.querySelectorAll("h1.title")[0]
     title.parentNode.insertBefore(tmb, title.nextSibling)
 }
 
 function getIdFromUrl(url) {
     const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
     const match = url.match(regExp)
-    if(match&&match[7].length==11) {
+    if(match && match[7].length == 11) {
         return match[7]
     }
     else {
