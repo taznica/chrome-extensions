@@ -15,7 +15,7 @@ function insertThumbnail() {
     tmb.height = 94
     tmb.style.paddingTop = "8px"
 
-    const title = document.querySelectorAll("h1.title")[0]
+    const title = document.querySelectorAll("h1.title.ytd-video-primary-info-renderer")[0]
     title.parentNode.insertBefore(tmb, title.nextSibling)
 }
 
