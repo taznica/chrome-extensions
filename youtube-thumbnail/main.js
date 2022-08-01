@@ -16,7 +16,9 @@ function insertThumbnail() {
     tmb.style.paddingTop = "8px"
 
     const title = document.querySelectorAll("#title.style-scope.ytd-watch-metadata")[0]
-    title.parentNode.insertBefore(tmb, title.nextSibling)
+    if (title !== undefined) {
+        title.parentNode.insertBefore(tmb, title.nextSibling)
+    }
 }
 
 function getIdFromUrl(url) {
