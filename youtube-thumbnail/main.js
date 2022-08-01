@@ -15,14 +15,16 @@ function insertThumbnail() {
     tmb.height = 94
     tmb.style.paddingTop = "8px"
 
-    const title = document.querySelectorAll("h1.title.ytd-video-primary-info-renderer")[0]
-    title.parentNode.insertBefore(tmb, title.nextSibling)
+    const title = document.querySelectorAll("#title.style-scope.ytd-watch-metadata")[0]
+    if (title !== undefined) {
+        title.parentNode.insertBefore(tmb, title.nextSibling)
+    }
 }
 
 function getIdFromUrl(url) {
     const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
     const match = url.match(regExp)
-    if(match && match[7].length == 11) {
+    if(match && match[7].length === 11) {
         return match[7]
     }
     else {
